@@ -79,7 +79,7 @@ public class Pessoa implements Serializable {
 		this.ativo = ativo;
 	}
 	
-	@JsonIgnore
+	//@JsonIgnore
 	@Transient
 	public boolean isInativo() {
 		

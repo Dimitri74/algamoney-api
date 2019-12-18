@@ -20,7 +20,7 @@ import com.algamoney.api.model.Pessoa;
 import com.algamoney.api.model.Pessoa_;
 import com.algamoney.api.repository.filter.PessoaFilter;
 
-public class PessoaRepositoryImpl implements PessoaRepositoryQuery {
+public abstract class PessoaRepositoryImpl implements PessoaRepositoryQuery {
 	
 	@PersistenceContext
 	private EntityManager manager;
@@ -47,10 +47,6 @@ public class PessoaRepositoryImpl implements PessoaRepositoryQuery {
 		
 		if(!StringUtils.isEmpty(pessoaFilter.getNome())) {
 		
-			/*Sem metamodel
-			  predicates.add(builder.like(builder.lower(root.get("descricao")),"%" + lancamentoFilter.getDescricao().toLowerCase() + "%"));
-			*/
-			 
 			//Usando o metamodel
 			predicates.add(builder.like(
 					builder.lower(root.get(Pessoa_.nome)),"%" + pessoaFilter.getNome().toLowerCase() + "%"));
