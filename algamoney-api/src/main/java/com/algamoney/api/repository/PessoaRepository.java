@@ -15,9 +15,9 @@ import com.algamoney.api.repository.pessoa.PessoaRepositoryQuery;
  * @author Morpheus
  *
  */
-public interface PessoaRepository extends JpaRepository<Pessoa, Long>,PessoaRepositoryQuery {
+public interface PessoaRepository extends JpaRepository<Pessoa, Long> {
 	
-	public Page<Pessoa> findByNomeContaining(String nome, Pageable pageable);
+	//public Page<Pessoa> findByNomeContaining(String nome, Pageable pageable);
 	
 	
 
