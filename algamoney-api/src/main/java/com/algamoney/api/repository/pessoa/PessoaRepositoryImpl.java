@@ -26,7 +26,7 @@ public abstract class PessoaRepositoryImpl implements PessoaRepositoryQuery {
 	private EntityManager manager;
 
 	@Override
-	public Page<Pessoa> pesquisar(PessoaFilter pessoaFilter, Pageable pageable) {
+	public Page<Pessoa> filtrar(PessoaFilter pessoaFilter, Pageable pageable) {
 		CriteriaBuilder builder = manager.getCriteriaBuilder();
 		CriteriaQuery<Pessoa> criteria = builder.createQuery(Pessoa.class);
 		
@@ -49,7 +49,7 @@ public abstract class PessoaRepositoryImpl implements PessoaRepositoryQuery {
 		
 			//Usando o metamodel
 			predicates.add(builder.like(
-					builder.lower(root.get(Pessoa_.nome)),"%" + pessoaFilter.getNome().toLowerCase() + "%"));
+					builder.lower(root.get("nome")),"%" + pessoaFilter.getNome().toLowerCase() + "%"));
 		}
 				
 		/* 

@@ -18,6 +18,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 /**
  * @author Morpheus
  *
@@ -34,9 +36,11 @@ public class Lancamento {
 	private String descricao;
 
 	@Column(name = "data_vencimento")
+    @DateTimeFormat(pattern = "dd/MM/yyyy")
 	private LocalDate dataVencimento;
 
 	@Column(name = "data_pagamento")
+	@DateTimeFormat(pattern = "dd/MM/yyyy")
 	private LocalDate dataPagamento;
     
 	@NotNull

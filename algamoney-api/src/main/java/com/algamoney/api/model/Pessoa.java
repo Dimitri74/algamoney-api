@@ -79,7 +79,7 @@ public class Pessoa implements Serializable {
 		this.ativo = ativo;
 	}
 	
-	//@JsonIgnore
+	@JsonIgnore
 	@Transient
 	public boolean isInativo() {
 		
@@ -115,6 +115,7 @@ public class Pessoa implements Serializable {
 	/* (non-Javadoc)
 	 * @see java.lang.Object#equals(java.lang.Object)
 	 */
+	
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -130,6 +131,11 @@ public class Pessoa implements Serializable {
 		} else if (!codigo.equals(other.codigo))
 			return false;
 		return true;
+	}
+
+	@Override
+	public String toString() {
+		return "Pessoa [codigo=" + codigo + ", nome=" + nome + ", ativo=" + ativo + ", endereco=" + endereco + "]";
 	}
 	
 	

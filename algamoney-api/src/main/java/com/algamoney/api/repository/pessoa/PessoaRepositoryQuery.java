@@ -1,5 +1,6 @@
 package com.algamoney.api.repository.pessoa;
 
+
 import java.util.List;
 
 import org.springframework.data.domain.Page;
@@ -10,8 +11,8 @@ import com.algamoney.api.repository.filter.PessoaFilter;
 
 public interface PessoaRepositoryQuery {
 	
-	public Page<Pessoa> pesquisar(PessoaFilter pessoaFilter, Pageable pageable);
+	public Page<Pessoa> filtrar(PessoaFilter pessoaFilter, Pageable pageable);
 	
-	public List<Pessoa> listar();
+ //  public List<Pessoa> listar();
 
 }
