@@ -4,6 +4,7 @@
 package com.algamoney.api.model;
 
 import java.math.BigDecimal;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.time.LocalDate;
 
 import javax.persistence.Column;
@@ -61,6 +62,12 @@ public class Lancamento {
 	@ManyToOne
 	@JoinColumn(name = "codigo_pessoa")
 	private Pessoa pessoa;
+	
+	@JsonIgnore
+	public boolean isReceita() {
+		return TipoLancamento.RECEITA.equals(this.tipo);
+		
+	}
 
 	public Long getCodigo() {
 		return codigo;

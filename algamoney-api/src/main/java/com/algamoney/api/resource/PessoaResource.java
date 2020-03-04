@@ -102,7 +102,7 @@ public class PessoaResource {
 	
 	
 	
-	@GetMapping // novo lançamento dropbox pessoa >Novo Lançamento.
+	//@GetMapping // novo lançamento dropbox pessoa >Novo Lançamento.
 	public List<Pessoa> listar(){
 		return pessoaRepository.findAll();
 	}
